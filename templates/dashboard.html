@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .data-item {
+        margin-bottom: 10px;
+      }
+
+      .data-label {
+        font-weight: bold;
+      }
+
+      .data-value {
+        margin-left: 10px;
+      }
+
+      .forecast-item {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+      }
+
+      .forecast-name {
+        font-weight: bold;
+      }
+
+      .forecast-description {
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dashboard</h1>
+      <div class="data-item">
+        <span class="data-label">Coordinates:</span>
+        <span class="data-value">{{ coordinates }}</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">Forecast Office:</span>
+        <span class="data-value">{{ forecast_office }}</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">City:</span>
+        <span class="data-value">{{ city }}</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label">State:</span>
+        <span class="data-value">{{ state }}</span>
+      </div>
+      <div class="forecast-item">
+        <h2>Weather Forecast</h2>
+        {% for forecast in weather_forecast %}
+        <div class="forecast-name">{{ forecast[0] }}</div>
+        <div class="forecast-description">{{ forecast[1] }}</div>
+        {% endfor %}
+      </div>
+      <a href="/" class="parse-button">Back to Home</a>
+    </div>
+  </body>
+</html>

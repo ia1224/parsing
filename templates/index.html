@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parse Data</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .form-group input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      .parse-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      .examples {
+        margin-top: 20px;
+      }
+
+      .city-button {
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        font-size: 14px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Data Parsing Web App</h1>
+      <form action="/dashboard" method="get">
+        <div class="form-group">
+          <label for="latitude">Latitude:</label>
+          <input type="text" id="latitude" name="latitude" required />
+        </div>
+        <div class="form-group">
+          <label for="longitude">Longitude:</label>
+          <input type="text" id="longitude" name="longitude" required />
+        </div>
+        <input
+          type="submit"
+          class="parse-button"
+          value="Parse Data from Source"
+        />
+      </form>
+      <div class="examples">
+        <h3>Examples:</h3>
+        <a
+          href="/dashboard?latitude=37.7749&amp;longitude=-122.4194"
+          class="city-button"
+          >San Francisco</a
+        >
+        <a
+          href="/dashboard?latitude=40.7128&amp;longitude=-74.0060"
+          class="city-button"
+          >New York City</a
+        >
+        <a
+          href="/dashboard?latitude=34.0522&amp;longitude=-118.2437"
+          class="city-button"
+          >Los Angeles</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
